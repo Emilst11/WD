@@ -35,7 +35,8 @@
 		}
 		.card-head{
 			padding-top: 10px;
-			padding-left: 20px;
+			padding-left: 10px;
+			padding-right: 10px;
 			padding-bottom: 10px;
 			height: 150px;
 			background: #ffff;
@@ -47,11 +48,74 @@
 			font-size: 34px;
 		}
 		.card-body{
-			padding-left: 20px;
+			padding-left: 10px;
+			padding-right: 10px;
 			height: auto;
 			text-align: justify;
 			letter-spacing: 1px;
 			border: white 3px solid;
+		}
+		.form-email{
+			margin-left: 50px;
+			background: none;
+			border-color: black 1px solid;
+			border-radius: 20px;
+			letter-spacing: 10px;
+			width: 430px;
+			height: 30px;
+		}
+		.form-email input#email{
+			padding-left: 10px;
+			color: #000;
+			letter-spacing: 3px;
+			font-size: 15px;
+			background: #fff;
+			opacity: 0.8;
+			border: 2px solid #fff;
+			border-radius: 20px;
+			width: 100%;
+			height: 100%;
+		}
+		.form-feedback{
+			margin-left: 50px;
+			background: none;
+			border-radius: 20px;
+			letter-spacing: 10px;
+			width: 430px;
+			height: 100px;
+		}
+		.form-feedback textarea#feedback{
+			padding-top: 5px;
+			color: #000;
+			padding-left: 10px;
+			text-align: justify;
+			letter-spacing: 3px;
+			font-size: 15px;
+			background: #fff;
+			opacity: 0.8;
+			border: 2px solid #fff;
+			border-radius: 20px;
+			width: 100%;
+			height: 100%;
+		}
+
+		.form-submit input#submit{
+			margin-left: 50px;
+			color: white;
+			margin-top: 10px;
+			width: 100px;
+			font-family: Open Sans;
+			background: none;
+			font-weight: bold;
+			letter-spacing: 4px;
+			border-radius: 20px;
+			border: 2px solid #fff;
+		}
+		input#submit:hover{
+			color: #000;
+			background: #fff;
+			background-color: #fff;
+			cursor: pointer;
 		}
 	</style>
 	<div class="navbar">
@@ -82,7 +146,7 @@
 				<h1>Apa alasan web ini dibentuk ?</h1>
 			</div>
   			<div class="card-body">
-    			Website ini dibentuk diperuntukan tugas berbasis project mata kuliah web design, tugas ini akan dikumpulkan pada akhir semester dan tujuan diberikan tugas ini adalah untuk melihat kedalaman pemahaman mata kuliah web design ini, apakah mahasiswa paham atau tidak dan bisa mengembangkannya.
+    			Website ini dibentuk diperuntukan sebagai tugas berbasis project mata kuliah web design, tugas ini akan dikumpulkan pada akhir semester dan tujuan diberikan tugas ini adalah untuk melihat kedalaman pemahaman mata kuliah web design ini, apakah mahasiswa paham atau tidak dan bisa mengembangkannya.
   			</div>
 		</div>
 		<div class="card animate__animated animate__fadeInDown animate__delay-4s">
@@ -94,5 +158,21 @@
   			</div>
 		</div>
 	</div>
+	<br>
+	<h1 style="margin-left: 60px;">Feedback / Question</h1>
+	<h5 style="margin-left: 60px;">E-mail</h5>
+	<div class="form-email">
+		<input type="email" id="email" name="email">
+	</div>
+	<br>
+	<h5 style="margin-left: 60px;">Feedback/ Question</h5>
+	<div class="form-feedback">
+		<textarea id="feedback"></textarea>
+	</div>
+	<br>
+	<div class="form-submit">
+		<input type="submit" id="submit" name="submit" value="Submit">
+	</div>
+	<br>
 </body>
 </html>
