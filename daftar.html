@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Design-In Daftar</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+</head>
+<body>
+	<style type="text/css">
+		body{
+			background: #86C3E5;
+			color: white;
+			font-family: Open Sans;
+			margin-right: 50px;
+		}
+		.navbar{
+			color: #000;
+		}
+		.navbar-left{
+			float: left;
+			padding-left: 20px;
+		}
+		.row{
+			justify-content: center;
+		}
+		.square{
+			width: 500px;
+			height: 650px;
+			background: white;
+			opacity: 0.6;
+		}
+		.square p{
+			margin-top: 20px;
+			font-style: normal;
+			font-family: roboto;
+			font-size: 32px;
+			color: #000;
+			font-weight: 800;
+			letter-spacing: 0.12em;
+			text-align: center;
+		}
+		.texticon{
+			margin-top: 20px;
+			font-family: roboto;
+			margin-left: 20px;
+			font-size: 24px;
+			font-weight: bold;
+			letter-spacing: 0.12em;
+			color: #000;
+		}
+		.form-regis{
+			margin-left: 20px;
+			padding-right: 20px;
+			background: none;
+			border-color: black 1px solid;
+			border-radius: 20px;
+			letter-spacing: 10px;
+			width: 480px;
+			height: 50px;
+		}
+		.form-regis input#name{
+			padding-left: 10px;
+			color: #000;
+			letter-spacing: 3px;
+			font-size: 15px;
+			background: #fff;
+			opacity: 0.8;
+			border: 2px solid #000;
+			border-radius: 20px;
+			width: 100%;
+			height: 100%;
+		}
+		.form-regis input#username{
+			padding-left: 10px;
+			color: #000;
+			letter-spacing: 3px;
+			font-size: 15px;
+			background: #fff;
+			opacity: 0.8;
+			border: 2px solid #000;
+			border-radius: 20px;
+			width: 100%;
+			height: 100%;
+		}
+		.form-regis input#password{
+			padding-left: 10px;
+			color: #000;
+			letter-spacing: 3px;
+			font-size: 15px;
+			background: #fff;
+			opacity: 0.8;
+			border: 2px solid #000;
+			border-radius: 20px;
+			width: 100%;
+			height: 100%;
+		}
+		.form-regis input#email{
+			padding-left: 10px;
+			color: #000;
+			letter-spacing: 3px;
+			font-size: 15px;
+			background: #fff;
+			opacity: 0.8;
+			border: 2px solid #000;
+			border-radius: 20px;
+			width: 100%;
+			height: 100%;
+		}
+		.form-regis input#submit{
+			margin-top: 30px;
+			margin-left: 180px;
+			font-size: 24px;
+			color: #000;
+			width: auto;
+			font-family: Open Sans;
+			background: none;
+			font-weight: bold;
+			letter-spacing: 4px;
+			border-radius: 20px;
+			border: 2px solid #000;
+		}
+		input#submit:hover{
+			color: #fff;
+			opacity: 0.6;
+			background: #86C3E5;
+			background-color: #86C3E5;
+			border: 2px solid #000;
+			cursor: pointer;
+		}
+	</style>
+	<div class="navbar">
+		<div class="navbar-left">
+			<a href="home.html" class="animate__animated animate__fadeIn"><img src="logo1.png" alt="logodesign" style="width: 140px; height: 50px"></a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="square animate__animated animate__fadeInDown">
+			<p>LOGIN</p>
+			<div class="texticon">Nama</div>
+			<div class="form-regis">
+				<input type="name" id="name" name="name" placeholder="Nama Anda">
+			</div>
+			<div class="texticon">Username</div>
+			<div class="form-regis">
+				<input type="username" id="username" name="username" placeholder="Username Anda">
+			</div>
+			<div class="texticon">Password</div>
+			<div class="form-regis">
+				<input type="password" id="password" name="password" placeholder="Sandi Anda">
+			</div>
+			<div class="texticon">E-mail Anda</div>
+			<div class="form-regis">
+				<input type="email" id="email" name="email" placeholder="Alamat E-mail Anda">
+			</div>
+			<div class="form-regis">
+				<input type="submit" id="submit" name="submit" value="Daftar">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
