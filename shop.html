@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Design-In Shop</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<style type="text/css">
+		html, body {
+   			margin: 0;
+   			padding: 0;
+		}
+		body{
+			color: #000;
+			font-family: Open Sans;
+			box-sizing: border-box;
+		}
+		.navbar{
+			background: white;
+			font-family: Open Sans;
+			color: black;
+			height: 50px;
+		}
+		.navbar-left{
+			float: left;
+			padding-left: 20px;
+			width: 800px;
+			word-spacing: 15px;
+		}
+		.navbar-left a{
+			position: sticky;
+			display: inline;
+			color: black;
+			text-decoration: none;
+		}
+		.navbar-left a:hover{
+			color: #ACB0B8;
+		}
+		.dropdown{
+			position: relative;
+			display: inline-block;
+		}
+		.dropdown-child{
+			position: absolute;
+			display: none;
+			background-color: #fff;
+			min-width: 100px;
+		}
+		.dropdown-child a{
+			color: black;
+			padding: 20px;
+			text-decoration: none;
+			display: block;
+		}
+		.dropdown:hover .dropdown-child{
+			display: block;
+			cursor: pointer;
+		}
+		
+		.gambar{
+			height: 365px;
+			width: 97.5%;
+			margin-left: 20px;
+			background: url("coba1.jpg");
+			background-size: cover;
+			-webkit-animation: fade;
+			-webkit-animation-duration: 2s;
+			animation-name: fade;
+			animation-duration: 3s;
+		}
+		.gambar p{
+			font-family: roboto;
+			color: #fff;
+			font-size: 24px;
+			font-weight: 800;
+			padding-top: 150px;
+			text-align: center;
+			letter-spacing: 9px;
+			text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
+		}
+
+		.jwpopup {
+    		display: none;
+   		 	position: fixed;
+    		z-index: 1;
+    		padding-top: 0px;
+    		left: 0;
+    		top: 0;
+    		width: 100%;
+    		height: 100%;
+    		overflow: auto;
+    		background-color: rgb(0,0,0);
+    		background-color: rgba(0,0,0,0.7);
+		}
+		.jwpopup-content {
+    		position: relative;
+    		background-color: #fff;
+    		top: 50px;
+    		margin: auto;
+    		width: 530px;
+    		height: 650px;
+    		padding: 0;
+    		max-width: 531px;
+    		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    		-webkit-animation-name: animatetop;
+    		-webkit-animation-duration: 0.4s;
+    		animation-name: animatetop;
+    		animation-duration: 0.4s;
+		}
+		.jwpopup-main{
+			position: relative;
+			top: 150px;
+			left: 50px;
+			color: black;
+			float: center;
+			font-size: 24px;
+			font-family: Open Sans;
+			letter-spacing: 0.09em;
+			font-weight: bold;
+		}
+		.jwpopup-foot{
+			position: relative;
+			top: 320px;
+			text-align: center;
+			color: black;
+			font-family: Open Sans;
+			letter-spacing: 3px;
+			font-style: normal;
+		}
+		.jwpopup-foot a{
+			color: #000;
+		}
+		@-webkit-keyframes animatetop {
+    		from {top:-300px; opacity:0}
+    		to {top:50; opacity:1}
+		}
+
+		@keyframes animatetop {
+    		from {top:-300px; opacity:0}
+    		to {top:50; opacity:1}
+		}
+		.close {
+  			margin-top: 7px;
+ 		 	margin: 15px;
+    		color: black;
+    		float: right;
+    		font-size: 28px;
+    		font-weight: bold;
+		}
+		.close:hover, .close:focus {
+    		color: grey;
+    		text-decoration: none;
+    		cursor: pointer;
+		}
+		.form-login{
+			position: absolute;
+			background-color: white;
+			border-color: black 1px solid;
+			border-radius: 20px;
+			letter-spacing: 10px;
+			width: 430px;
+		}
+		.form-login input#Username{
+			font-size: 18px;
+			background: #fff;
+			border: 2px solid #000;
+			border-radius: 20px;
+			width: 430px;
+			height: 45px;
+			padding-left: 15px;
+			font-family: roboto;
+			letter-spacing: 2px;
+		}
+
+		.form-login input#Password{
+			font-size: 18px;
+			background: #fff;
+			border: 2px solid #000;
+			border-radius: 20px;
+			width: 430px;
+			height: 45px;
+			padding-left: 15px;
+			letter-spacing: 5px;
+		}
+		.form-login input#submit{
+			position: absolute;
+			top: 100px;
+			left: 130px;
+			width: 150px;
+			font-family: Open Sans;
+			background-color: #fff;
+			font-weight: bold;
+			letter-spacing: 4px;
+			border-radius: 20px;
+			border: 2px solid #000;
+		}
+
+		input#submit:hover{
+			color: white;
+			background: #000;
+			background-color: #000;
+			cursor: pointer;
+		}
+		.row{
+			justify-content: center;
+			margin-right: 20px;
+		}
+		.row a{
+			text-decoration: none;
+		}
+		.card{
+			background: none;
+			margin-left: 30px;
+			margin-top: 50px;
+			font-family: Open Sans;
+			width: 270px;
+			height: 400px;
+			border: 1px solid #000;
+			box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+		}.card-empty{
+			background: #C4C4C4;
+			padding-top: 150px;
+			height: 100%;
+			width: auto;
+			font-size: 50px;
+			text-align: center;
+		}
+		@keyframes efek {
+  			100% {
+    			transform: translateY(-8px);
+  			}
+  		}
+		.card:hover{
+			animation-name: efek;
+  			animation-duration: 0.2s;
+  			animation-delay: 0.1s;
+  			animation-timing-function: ease-out;
+  			animation-iteration-count: 1;
+  			animation-fill-mode: forwards;
+  			animation-direction: normal;
+  			box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5);
+		}
+		.card-head{
+			padding-top: 10px;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-bottom: 10px;
+			background: #ffff;
+			background-size: cover;
+		}
+		.card-head img{
+			height: auto;
+			width: 100%;
+		}
+		.card-body{
+			font-size: 15px;
+			position: relative;
+			color: #000;
+			padding-left: 10px;
+			padding-right: 10px;
+			text-align: justify;
+			letter-spacing: 1px;
+		}
+		.card-body q{
+			font-size: 12px;
+			color: #000;
+			position: relative;
+			text-align: justify;
+		}
+		.card-foot{
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-bottom: 20px;
+			font-size: 12px;
+			color: #000;
+			letter-spacing: 1px;
+		}
+
+		.breadcrumb{
+			background: none;
+		}
+		.breadcrumb li a{
+			color: #000;
+			font-weight: 800;
+			text-decoration: none;
+			margin-left: 10px;
+    		display: inline;
+		}
+		.breadcrumb li+li:before {
+			margin-left: 10px;
+			margin-right: 10px;
+   	 		content:"/";
+		}
+		ul.pagination{
+			display: inline-block;
+			padding: 0;
+			margin-top: 50px;
+			text-align: center;
+		}
+		ul.pagination li{
+			display: inline;
+		}
+
+		ul.pagination li a{
+			font-weight: 800;
+			color: #000;
+			justify-content: center;
+			padding: 8px 16px;
+			text-decoration: none;
+			transition: background-color .3s;
+			border: 1px solid #000;
+			border-radius: 100%;
+		}
+		ul.pagination li a.active {
+   			background-color: #1C4D79;
+    		color: #fff;
+    		border: 1px solid #000;
+		}
+		ul.pagination li a.mati{
+			background: none;
+			color: #000;
+			border: 1px solid #000;
+		}
+
+		ul.pagination li a:hover:not(.active){
+			background-color: #ddd;
+		}
+		div.center{
+			text-align: center;
+		}
+		.bottom{
+			background: #000;
+			background-repeat: repeat-y;
+			width: 100%;
+			height: 30px;
+			grid-template-columns: repeat(4, auto);
+			position: fixed;
+   			bottom:0px;
+		}
+		.bottom-left{
+			float: left;
+			padding-left: 100px;
+		}
+		.bottom-left a{
+			margin: 0;
+			width: 16px;
+			height: 16px;
+		}
+		.bottom-right{
+			height: 10px;
+			color: #fff;
+			float: right;
+			padding-right: 50px;
+			padding-bottom: 0;
+			margin: 0;
+		}
+		.jual{
+			margin-top: 20px;
+			margin-right: 20px;
+			padding-right: 10px;
+			padding-left: 10px;
+			float: right;
+			border: 1px solid #000;
+			border-style: dotted;
+		}
+		.jual a{
+			font-size: 24px;
+			text-decoration: none;
+			letter-spacing: 1px;
+			color: #000;
+		}
+		.jual:hover{
+			border-style: none;
+			background: #C4C4C4;
+			color: #000;
+		}
+	</style>
+	
+	<div class="navbar animate__animated animate__fadeInDown">
+		<div class="navbar-left">
+			<a class="nav-item active" href="index.html" style="font-weight: bold; text-decoration: none;">HOME</a>
+			<div class="dropdown">
+				<a href="">CATEGORY</a>
+				<div class="dropdown-child">
+					<a href="cv.html">CV</a>
+					<a href="iklan.html">IKLAN</a>
+					<a href="fashion.html">FASHION</a>
+					<a href="web.html">WEB</a>
+					<a href="logo.html">LOGO</a>
+					<a href="semua.html">LAINNYA</a>
+				</div>
+			</div>
+			<a class="nav-item" href="javascript:void(0);" id="jwpopupLink">LOGIN</a>
+			<a class="nav-item" href="about.html">ABOUT</a>
+		</div>
+	</div>
+	<div id="jwpopupBox" class="jwpopup">
+		<div class="jwpopup-content">
+			<div class="jwpopup-head">
+				<span class="close">x</span>
+				<div style="
+					position: relative; 
+					top: 100px;
+					left: 210px;
+					color: black;
+					float: center;
+					font-size: 24px;
+					font-family: Open Sans;
+					letter-spacing: 0.09em;
+					font-weight: bold;">LOGIN</div>
+				</div>
+			<div class="jwpopup-main">
+				<div>USERNAME</div>
+				<div class="form-login">
+					<input type="Username" id="Username" name="Username">
+				</div>
+				<br>
+				<br>
+				<div>PASSWORD</div>
+				<div class="form-login">
+					<input type="Password" id="Password" name="Password">
+					<br>
+					<input type="submit" id="submit" name="login" value="Sign in">
+				</div>
+			</div>
+			<div class="jwpopup-foot">
+				<div>Atau belum memiliki akun ?</div>
+				<a href="daftar.html">Klik disini</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="gambar">
+		<p>Cari designer yang cocok lalu dapatkan design yang dirimu inginkan</p>
+	</div>
+	
+	<div>
+		<a href="index.html" class="animate__animated animate__fadeIn"><img src="logo2.png" alt="logodesignin" style="width: 140px; height: 50px; margin-top: 20px; margin-left: 20px;"></a>
+		<div class="jual">
+			<a href="logojual.html">+</a>
+		</div>
+		<ol class="breadcrumb">
+			<li><a href="index.html">Home</a></li>
+    		<li><a href="#">Category</a></li>
+    		<li class="current active">Fashion</li>
+		</ol>
+		
+	</div>
+	
+	<div class="row">
+		<a href="" class="card">
+			<div class="card-head">
+				<img src="p1.jpg">
+			</div>
+			<div class="card-body">
+				<p>JASA PEMBUATAN LOGO</p>
+				<p>EMIL SETIAWAN</p>
+				<q>Deskripsi : jasa pembuatan logo dalam waktu sehari jadi dan memiliki beberapa paket pembuatan yaitu ...</q>
+			</div>
+			<div class="card-foot">Rp.25.000,-</div>
+		</a>
+
+		<a href="lapak_logo_1.html" class="card">
+			<div class="card-head">
+				<img src="bgshop.jpg">
+			</div>
+			<div class="card-body">
+				<p>JASA PEMBUATAN LOGO</p>
+				<p>EMIL SETIAWAN</p>
+				<q>Deskripsi : jasa pembuatan logo dalam waktu sehari jadi dan memiliki beberapa paket pembuatan yaitu ...</q>
+			</div>
+			<div class="card-foot">Rp.25.000,-</div>
+		</a>
+
+		<a href="" class="card">
+			<div class="card-head">
+				<img src="p2.jpg">
+			</div>
+			<div class="card-body">
+				<p>JASA PEMBUATAN LOGO</p>
+				<p>EMIL SETIAWAN</p>
+				<q>Deskripsi : jasa pembuatan logo dalam waktu sehari jadi dan memiliki beberapa paket pembuatan yaitu ...</q>
+			</div>
+			<div class="card-foot">Rp.25.000,-</div>
+		</a>
+
+		<a href="" class="card">
+			<div class="card-head">
+				<img src="rachael-gorjestani-X6CZGpJBi8U-unsplash.jpg">
+			</div>
+			<div class="card-body">
+				<p>JASA PEMBUATAN LOGO</p>
+				<p>EMIL SETIAWAN</p>
+				<q>Deskripsi : jasa pembuatan logo dalam waktu sehari jadi dan memiliki beberapa paket pembuatan yaitu ...</q>
+			</div>
+			<div class="card-foot">Rp.25.000,-</div>
+		</a>
+
+		<a href="logojual.html" class="card">
+			<div class="card-empty">+</div>
+		</a>
+	</div>
+	<div class="center">
+		<ul class="pagination">
+			<li><a class="mati" href="#">«</a></li>
+  			<li><a class="active" href="#">1</a></li>
+  			<li><a href="#">2</a></li>
+  			<li><a href="#">»</a></li>
+		</ul>
+	</div>
+	<hr>
+	<br>
+	<div class="bottom">
+		<div class="bottom-left">
+			<a href=""><img src="newig.png" style="width: 25px; height: 25px;"></a>
+			<a href=""><img src="newfb.png" style="width: 25px; height: 25px;"></a>
+			<a href=""><img src="newemail.png" style="width: 25px; height: 25px;"></a>
+		</div>
+		<div class="bottom-right">
+			<p>designin@design.org.id</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var jwpopup = document.getElementById('jwpopupBox');
+		var mpLink = document.getElementById("jwpopupLink");
+		var close = document.getElementsByClassName("close")[0];mpLink.onclick = function() 
+		{
+    		jwpopup.style.display = "block";
+		}
+
+		close.onclick = function() {
+			jwpopup.style.display = "none";
+		}
+		window.onclick = function(event) 
+		{
+    	if (event.target == jwpopup) 
+    		{
+        		jwpopup.style.display = "none";
+    		}
+   		}
+	</script>
+</body>
+</html>
