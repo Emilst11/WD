@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Design-IN/Lapak</title>
+	<title>Design-IN</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
 </head>
@@ -221,7 +221,16 @@
 			color: #000;
 			letter-spacing: 1.5px;
 			font-weight: 500;
-			height: 250px;
+			height: 200px;
+		}
+		.box-body div.container{
+			margin-top: 0;
+			padding-top: 20px;
+			display: -webkit-flex;
+    		display: flex;
+    		-webkit-justify-content: center;
+    		justify-content: center;
+    		height: auto;
 		}
 		.box-body-left{
 			float: left;
@@ -255,26 +264,32 @@
 		}
 		.box-bottom{
 			color: #000;
+			padding-top: 20px;
 			padding-bottom: 10px;
 			width: 100%;
 			height: auto;
+		}
+		.box-bottom div.container{
+			display: flex;
+			margin-top: 0;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		.text{
+			margin-left: 10px;
+		}
+		.text2{
+			margin-right: auto;
+		}
+		.waklik{
+			margin-left: auto;
 		}
 		.box-bottom p{
 			font-size: 18px;
 			font-weight: 700;
 			letter-spacing: 1px;
 		}
-		.box-bottom div.row{
-			justify-content: unset;
-			margin-left: 0px;
-		}
-		.box-bottom div.row p{
-			margin-right: 50px;
-		}
-		.box-bottom div.row a{
-			float: right;
-			margin-left: 430px;
-		}
+		
 		.bottom{
 			background: #000;
 			background-repeat: repeat-y;
@@ -333,7 +348,7 @@
 					<a href="">IKLAN</a>
 					<a href="">FASHION</a>
 					<a href="">WEB</a>
-					<a href="logo.html">LOGO</a>
+					<a href="">LOGO</a>
 					<a href="">LAINNYA</a>
 				</div>
 			</div>
@@ -386,26 +401,30 @@
 				<p>Emil Setiawan</p>
 			</div>
 			<div class="box-body">
-				<div class="row">
-					<div class="box-body-left">
-						<h1>Deskripsi :</h1>
-						<p>Jasa pembuatan logo dalam waktu sehari jadi dan rapih, disini saya akan mendesain dengan sungguh sungguh karena saya sendiri adalah profesional designer logo atau dalam kata lain saya sangat berpengalaman dalam bidang ini</p>
-					</div>
-					<div class="box-body-right">
-						<h1>Paket Penjualan :</h1>
-						<li>1 Logo Rp. 25.000 pengerjaan 2 hari</li>
-						<li>2 - 4 Logo Rp. 40.000 - Rp. 90.000 pengerjaan 3 hari</li>
-						<li>5 - 9 Logo Rp. 100.000 - Rp. 180.000 pengerjaan 7 hari</li>
-						<li>10+ Logo Rp. 18.000/Logo pengerjaan menyesuaikan banyak</li>
+				<div class="container">
+					<div class="row">
+						<div class="box-body-left">
+							<h1>Deskripsi :</h1>
+							<p>Jasa pembuatan logo dalam waktu sehari jadi dan rapih, disini saya akan mendesain dengan sungguh sungguh karena saya sendiri adalah profesional designer logo atau dalam kata lain saya sangat berpengalaman dalam bidang ini</p>
+						</div>
+						<div class="box-body-right">
+							<h1>Paket Penjualan :</h1>
+							<li>1 Logo Rp. 25.000 pengerjaan 2 hari</li>
+							<li>2 - 4 Logo Rp. 40.000 - Rp. 90.000 pengerjaan 3 hari</li>
+							<li>5 - 9 Logo Rp. 100.000 - Rp. 180.000 pengerjaan 7 hari</li>
+							<li>10+ Logo Rp. 18.000/Logo pengerjaan menyesuaikan banyak</li>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="box-bottom">
-				<p>Harga : Rp. 25.000/ Logo</p>
-				<div class="row">
+				<div class="container">
+					<p class="text2">Harga : Rp. 25.000/ Logo</p>
+				</div>
+				<div class="container">
 					<p>No Telp: 08xx-xxx-xxxx</p>
-					<p>Email: emilxxxxxx@xxxx.com</p>
-					<a href=""><img src="whatsapp.png" alt="hub" style="height: 40px; width: 40px;"></a>
+					<p class="text">Email: emilxxxxxx@xxxx.com</p>
+					<a class="waklik" href=""><img src="whatsapp.png" alt="hub" style="height: 40px; width: 40px;"></a>
 				</div>
 			</div>
 		</div>
