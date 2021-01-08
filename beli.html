@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Design-IN Lapak</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+</head>
+<body>
+	<style type="text/css">
+		body{
+			background: url("beli.jpg");
+			background-size: cover;
+		}
+		.navbar{
+			background: white;
+			font-family: Open Sans;
+			color: black;
+			height: 50px;
+		}
+		.navbar-left{
+			float: left;
+			padding-left: 20px;
+			width: 800px;
+			word-spacing: 15px;
+		}
+		.navbar-left a{
+			position: sticky;
+			display: inline;
+			color: black;
+			text-decoration: none;
+		}
+		.navbar-left a:hover{
+			color: #ACB0B8;
+		}
+		.dropdown{
+			position: relative;
+			display: inline-block;
+		}
+		.dropdown-child{
+			position: absolute;
+			display: none;
+			background-color: #fff;
+			min-width: 100px;
+		}
+		.dropdown-child a{
+			color: black;
+			padding: 20px;
+			text-decoration: none;
+			display: block;
+		}
+		.dropdown:hover .dropdown-child{
+			display: block;
+			cursor: pointer;
+		}
+		.jwpopup {
+    		display: none;
+   		 	position: fixed;
+    		z-index: 1;
+    		padding-top: 0px;
+    		left: 0;
+    		top: 0;
+    		width: 100%;
+    		height: 100%;
+    		overflow: auto;
+    		background-color: rgb(0,0,0);
+    		background-color: rgba(0,0,0,0.7);
+		}
+		.jwpopup-content {
+    		position: relative;
+    		background-color: #fff;
+    		top: 50px;
+    		margin: auto;
+    		width: 530px;
+    		height: 650px;
+    		padding: 0;
+    		max-width: 531px;
+    		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    		-webkit-animation-name: animatetop;
+    		-webkit-animation-duration: 0.4s;
+    		animation-name: animatetop;
+    		animation-duration: 0.4s;
+		}
+		.jwpopup-main{
+			position: relative;
+			top: 150px;
+			left: 50px;
+			color: black;
+			float: center;
+			font-size: 24px;
+			font-family: Open Sans;
+			letter-spacing: 0.09em;
+			font-weight: bold;
+		}
+		.jwpopup-foot{
+			position: relative;
+			top: 320px;
+			text-align: center;
+			color: black;
+			font-family: Open Sans;
+			letter-spacing: 3px;
+			font-style: normal;
+		}
+		.jwpopup-foot a{
+			color: #000;
+		}
+		@-webkit-keyframes animatetop {
+    		from {top:-300px; opacity:0}
+    		to {top:50; opacity:1}
+		}
+
+		@keyframes animatetop {
+    		from {top:-300px; opacity:0}
+    		to {top:50; opacity:1}
+		}
+		.close {
+  			margin-top: 7px;
+ 		 	margin: 15px;
+    		color: black;
+    		float: right;
+    		font-size: 28px;
+    		font-weight: bold;
+		}
+		.close:hover, .close:focus {
+    		color: grey;
+    		text-decoration: none;
+    		cursor: pointer;
+		}
+		.form-login{
+			position: absolute;
+			background-color: white;
+			border-color: black 1px solid;
+			border-radius: 20px;
+			letter-spacing: 10px;
+			width: 430px;
+		}
+		.form-login input#Username{
+			font-size: 18px;
+			background: #fff;
+			border: 2px solid #000;
+			border-radius: 20px;
+			width: 430px;
+			height: 45px;
+			padding-left: 15px;
+			font-family: roboto;
+			letter-spacing: 2px;
+		}
+
+		.form-login input#Password{
+			font-size: 18px;
+			background: #fff;
+			border: 2px solid #000;
+			border-radius: 20px;
+			width: 430px;
+			height: 45px;
+			padding-left: 15px;
+			letter-spacing: 5px;
+		}
+		.form-login input#submit{
+			position: absolute;
+			top: 100px;
+			left: 130px;
+			width: 150px;
+			font-family: Open Sans;
+			background-color: #fff;
+			font-weight: bold;
+			letter-spacing: 4px;
+			border-radius: 20px;
+			border: 2px solid #000;
+		}
+
+		input#submit:hover{
+			color: white;
+			background: #000;
+			background-color: #000;
+			cursor: pointer;
+		}
+		.container{
+			margin-top: 0;
+			padding-top: 50px;
+			display: -webkit-flex;
+    		display: flex;
+    		-webkit-justify-content: center;
+    		justify-content: center;
+    		height: auto;
+		}
+		.box{
+			margin: 0;
+			background: #fff;
+			width: 100%;
+			height: auto;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		.box-top{
+			margin-top: 20px;
+			padding-top: 120px;
+			width: 100%;
+			height: 200px;
+			background: url("rachael-gorjestani-X6CZGpJBi8U-unsplash.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+		.box-top h1{
+			margin-left: 10px;
+			color: #fff;
+			text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+			font-size: 32px;
+			font-weight: 600;
+			text-decoration: underline;
+		}
+		.box-top p{
+			margin-top: -10px;
+			margin-left: 10px;
+			color: #fff;
+			text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+			font-size: 24px;
+			font-weight: 600;
+		}
+		.box-body{
+			margin-top: 20px;
+			color: #000;
+			letter-spacing: 1.5px;
+			font-weight: 500;
+			height: 200px;
+		}
+		.box-body div.container{
+			margin-top: 0;
+			padding-top: 20px;
+			display: -webkit-flex;
+    		display: flex;
+    		-webkit-justify-content: center;
+    		justify-content: center;
+    		height: auto;
+		}
+		.box-body-left{
+			float: left;
+			width: 45%;
+		}
+		.box-body-left h1{
+			color: #000;
+			letter-spacing: 2px;
+			font-size: 28px;
+			font-weight: 700;
+		}
+		.box-body-left p{
+			text-align: justify;
+			font-size: 15px;
+		}
+		.box-body-right{
+			width: 45%;
+			margin-left: 80px;
+		}
+		.box-body-right h1{
+			color: #000;
+			letter-spacing: 2px;
+			font-size: 28px;
+			font-weight: 700;
+		}
+		.box-body-right li{
+			font-size: 15px;
+		}
+		.row{
+			justify-content: center;
+		}
+		.box-bottom{
+			color: #000;
+			padding-top: 20px;
+			padding-bottom: 10px;
+			width: 100%;
+			height: auto;
+		}
+		.box-bottom div.container{
+			display: flex;
+			margin-top: 0;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		.text{
+			margin-left: 10px;
+		}
+		.text2{
+			margin-right: auto;
+		}
+		.waklik{
+			margin-left: auto;
+		}
+		.box-bottom p{
+			font-size: 18px;
+			font-weight: 700;
+			letter-spacing: 1px;
+		}
+		
+		.bottom{
+			background: #000;
+			background-repeat: repeat-y;
+			width: 100%;
+			height: 30px;
+			grid-template-columns: repeat(4, auto);
+			position: fixed;
+   			bottom:0px;
+		}
+		.bottom-left{
+			float: left;
+			padding-left: 100px;
+		}
+		.bottom-left a{
+			margin: 0;
+			width: 16px;
+			height: 16px;
+		}
+		.bottom-right{
+			height: 10px;
+			color: #fff;
+			float: right;
+			padding-right: 50px;
+			padding-bottom: 0;
+			margin: 0;
+		}
+		.back{
+			position: absolute;
+			margin-left: 20px;
+			margin-top: 0px;
+		}
+		.back a{
+			text-decoration: none;
+			color: #000;
+			font-size: 24px;
+			font-weight: 700;
+			text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+		}
+		.back a:before{
+			content: "< ";
+			font-weight: 700;
+			font-size: 30px;
+			text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+		}
+		.back a:hover{
+			color: #fff;
+		}
+	</style>
+	<div class="navbar animate__animated animate__fadeInDown">
+		<div class="navbar-left">
+			<a class="nav-item active" href="index.html" style="font-weight: bold; text-decoration: none;">HOME</a>
+			<div class="dropdown">
+				<a href="">CATEGORY</a>
+				<div class="dropdown-child">
+					<a href="cv.html">CV</a>
+					<a href="iklan.html">IKLAN</a>
+					<a href="fashion.html">FASHION</a>
+					<a href="web.html">WEB</a>
+					<a href="logo.html">LOGO</a>
+					<a href="semua.html">LAINNYA</a>
+				</div>
+			</div>
+			<a class="nav-item" href="javascript:void(0);" id="jwpopupLink">LOGIN</a>
+			<a class="nav-item" href="about.html">ABOUT</a>
+		</div>
+	</div>
+	<div id="jwpopupBox" class="jwpopup">
+		<div class="jwpopup-content">
+			<div class="jwpopup-head">
+				<span class="close">x</span>
+				<div style="
+					position: relative; 
+					top: 100px;
+					left: 210px;
+					color: black;
+					float: center;
+					font-size: 24px;
+					font-family: Open Sans;
+					letter-spacing: 0.09em;
+					font-weight: bold;">LOGIN</div>
+				</div>
+			<div class="jwpopup-main">
+				<div>USERNAME</div>
+				<div class="form-login">
+					<input type="Username" id="Username" name="Username">
+				</div>
+				<br>
+				<br>
+				<div>PASSWORD</div>
+				<div class="form-login">
+					<input type="Password" id="Password" name="Password">
+					<br>
+					<input type="submit" id="submit" name="login" value="Sign in">
+				</div>
+			</div>
+			<div class="jwpopup-foot">
+				<div>Atau belum memiliki akun ?</div>
+				<a href="daftar.html">Klik disini</a>
+			</div>
+		</div>
+	</div>
+	<div class="back">
+		<a href="logo.html">Back</a>
+	</div>
+	<div class="container">
+		<div class="box">
+			<div class="box-top">
+				<h1>Design Logo</h1>
+				<p>Emil Setiawan</p>
+			</div>
+			<div class="box-body">
+				<div class="container">
+					<div class="row">
+						<div class="box-body-left">
+							<h1>Deskripsi :</h1>
+							<p>Jasa pembuatan logo dalam waktu sehari jadi dan rapih, disini saya akan mendesain dengan sungguh sungguh karena saya sendiri adalah profesional designer logo atau dalam kata lain saya sangat berpengalaman dalam bidang ini</p>
+						</div>
+						<div class="box-body-right">
+							<h1>Paket Penjualan :</h1>
+							<li>1 Logo Rp. 25.000 pengerjaan 2 hari</li>
+							<li>2 - 4 Logo Rp. 40.000 - Rp. 90.000 pengerjaan 3 hari</li>
+							<li>5 - 9 Logo Rp. 100.000 - Rp. 180.000 pengerjaan 7 hari</li>
+							<li>10+ Logo Rp. 18.000/Logo pengerjaan menyesuaikan banyak</li>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box-bottom">
+				<div class="container">
+					<p class="text2">Harga : Rp. 25.000/ Logo</p>
+				</div>
+				<div class="container">
+					<p>No Telp: 08xx-xxx-xxxx</p>
+					<p class="text">Email: emilxxxxxx@xxxx.com</p>
+					<a class="waklik" href=""><img src="whatsapp.png" alt="hub" style="height: 40px; width: 40px;"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="bottom">
+			<div class="bottom-left">
+				<a href=""><img src="newig.png" style="width: 25px; height: 25px;"></a>
+				<a href=""><img src="newfb.png" style="width: 25px; height: 25px;"></a>
+				<a href=""><img src="newemail.png" style="width: 25px; height: 25px;"></a>
+			</div>
+			<div class="bottom-right">
+				<p>designin@design.org.id</p>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript">
+		var jwpopup = document.getElementById('jwpopupBox');
+		var mpLink = document.getElementById("jwpopupLink");
+		var close = document.getElementsByClassName("close")[0];mpLink.onclick = function() 
+		{
+    		jwpopup.style.display = "block";
+		}
+
+		close.onclick = function() {
+			jwpopup.style.display = "none";
+		}
+		window.onclick = function(event) 
+		{
+    	if (event.target == jwpopup) 
+    		{
+        		jwpopup.style.display = "none";
+    		}
+   		}
+	</script>
+</body>
+</html>
