@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Design-In Dagang</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+</head>
+<body>
+	<style type="text/css">
+		body{
+			background-image: url("bglapak.jpg");
+			background-size: cover;
+			color: white;
+			font-family: Open Sans;
+		}
+		.row{
+			text-align: right;
+		}
+		.navbar{
+			background: #fff;
+			color: #000;
+		}
+		.navbar-left{
+			float: left;
+			padding-left: 20px;
+		}
+		.backbtn a{
+			margin-left: 40px;
+			font-weight: bold;
+			color: #fff;
+			text-shadow: 2px 3px 3px rgba(0,0,0,0.5);
+			font-size: 28px;
+			text-decoration: none;
+		}
+		.backbtn a:before{
+			content: "<";
+			text-shadow: 2px 3px 3px rgba(0,0,0,0.5);
+		}
+		.container{
+			margin-top: 50px;
+			display: -webkit-flex;
+    		display: flex;
+    		-webkit-justify-content: center;
+    		justify-content: space-between;
+    		height: auto;
+		}
+		.box{
+			float: left;
+			background: rgba(255, 255, 255, 0.27);
+			height: auto;
+			width: auto;
+			box-shadow: 2px 3px 3px rgba(0,0,0,0.27);
+			padding-bottom: 10px;
+			padding-right: 30px;
+		}
+		.box p{
+			position: relative;
+			padding-top: 10px;
+			margin-top: 15px;
+			margin-left: 50px;
+			font-family: roboto;
+			color: #fff;
+			font-size: 24px;
+			font-weight: bold;
+			letter-spacing: 0.09em;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.62);
+		}
+		.box input#namalapak{
+			padding-left: 5px;
+			margin-top: 25px;
+			margin-left: 20px;
+			background: white;
+			border: 2px solid #fff;
+			border-radius: 20px;
+			letter-spacing: 5px;
+			width: 350px;
+			height: 40px;
+			font-size: 20px;
+			box-shadow: 2px 3px 3px rgba(0,0,0,0.5);	
+		}
+		.box input#nama{
+			padding-left: 5px;
+			margin-top: 25px;
+			margin-left: 35px;
+			background: white;
+			border: 2px solid #fff;
+			border-radius: 20px;
+			letter-spacing: 5px;
+			width: 350px;
+			height: 40px;
+			font-size: 20px;
+			box-shadow: 2px 3px 3px rgba(0,0,0,0.5);	
+		}
+		.box input#email{
+			padding-left: 5px;
+			margin-top: 25px;
+			margin-left: 25px;
+			background: white;
+			border: 2px solid #fff;
+			border-radius: 20px;
+			letter-spacing: 5px;
+			width: 350px;
+			height: 40px;
+			font-size: 20px;
+			box-shadow: 2px 3px 3px rgba(0,0,0,0.5);	
+		}
+		.box textarea#deskripsi{
+			padding-left: 5px;
+			margin-top: 25px;
+			margin-left: 60px;
+			background: white;
+			border: 2px solid #fff;
+			border-radius: 10px;
+			letter-spacing: 5px;
+			width: 350px;
+			height: 200px;
+			font-size: 20px;
+			text-align: justify;
+			box-shadow: 2px 3px 3px rgba(0,0,0,0.5);
+		}
+		.box textarea#paket{
+			padding-left: 5px;
+			margin-top: 25px;
+			margin-left: 110px;
+			background: white;
+			border: 2px solid #fff;
+			border-radius: 10px;
+			letter-spacing: 5px;
+			width: 350px;
+			height: 200px;
+			font-size: 20px;
+			text-align: justify;
+			box-shadow: 2px 3px 3px rgba(0,0,0,0.5);
+		}
+
+		.box input#file{
+			padding-left: 5px;
+			padding-right: 5px;
+			margin-top: 25px;
+			margin-left: 40px;
+			padding-top: 5px;
+			border-color: white;
+			color: black;
+			width: 350px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+		}
+		.file-btn::-webkit-file-upload-button {
+			border-color: white;
+			border-radius: 20px;
+			background: white;
+			letter-spacing: 5px;
+			height: 40px;
+			font-size: 20px;
+			color: #000;
+			box-shadow: 2px 3px 3px rgba(0,0,0,0.5);
+		}
+		.box input#harga{
+			padding-left: 5px;
+			margin-top: 25px;
+			margin-left: 50px;
+			background: white;
+			border: 2px solid #fff;
+			border-radius: 20px;
+			letter-spacing: 5px;
+			width: 350px;
+			height: 40px;
+			font-size: 20px;
+			box-shadow: 2px 3px 3px rgba(0,0,0,0.5);
+		}
+		.box input#contact{
+			padding-left: 5px;
+			margin-top: 25px;
+			margin-left: 80px;
+			background: white;
+			border: 2px solid #fff;
+			border-radius: 20px;
+			letter-spacing: 5px;
+			width: 350px;
+			height: 40px;
+			font-size: 20px;
+			box-shadow: 2px 3px 3px rgba(0,0,0,0.5);
+		}
+		.box input#submit{
+			float: right;
+			margin-right: 0px;
+			color: white;
+			margin-top: 10px;
+			width: 100px;
+			font-family: Open Sans;
+			background: none;
+			font-weight: bold;
+			letter-spacing: 4px;
+			border-radius: 20px;
+			border: 2px solid #fff;
+		}
+		input#submit:hover{
+			color: #000;
+			background: #fff;
+			background-color: #fff;
+			cursor: pointer;
+		}
+		.radiobtn{
+			color: #fff;
+			font-weight: 400;
+			font-weight: 600;
+			margin-top: 30px;
+			margin-left: 10px;
+			text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+		}	
+		input[type=radio]:not(old){
+			width: 2em;
+ 			margin: 0;
+  			padding: 0;
+  			font-size: 1em;
+  			opacity: 0;
+		}
+		input[type=radio]:not(old) + label{
+		 	display: inline-block;
+  			margin-left: -2em;
+  			line-height: 1.5em;
+		}
+		input[type=radio   ]:not(old) + label > span{
+  			display: inline-block;
+  			width: 20px;
+  			height: 20px;
+  			margin: 0.25em 0.5em 0.25em 0.25em;
+  			border: 0.0625em solid #000;
+  			border-radius: 100%;
+  			background: #000;
+  			background-image:-moz-linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
+  			background-image: -ms-linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
+  			background-image:  -o-linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
+  			background-image:-webkit-linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
+  			background-image:        linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
+  			vertical-align: bottom;
+		}
+		input[type=radio]:not(old):checked + label > span{
+ 	 		background-image:-moz-linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
+  			background-image: -ms-linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
+  			background-image:  -o-linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
+  			background-image:-webkit-linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
+		  	background-image:        linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
+		}
+		input[type=radio]:not(old):checked + label > span > span{
+			justify-content: center;
+	  		display: block;
+	  		margin: 1.5px;
+  			width: 15px;
+  			height: 15px;
+  			border: 0.0625em solid #000;
+  			border-radius: 100%;
+  			background: #000;
+  			background-image:-moz-linear-gradient(#000, #000);
+  			background-image:-ms-linear-gradient(#000, #000);
+  			background-image:-o-linear-gradient(#000, #000);
+  			background-image:-webkit-linear-gradient(#000, #000);
+  			background-image:linear-gradient(#000, #000);
+		}
+		.line{
+			margin-left: auto;
+			margin-right: 20px;
+			width: 20px;
+			height: 200px;
+			background: white;
+			box-shadow: 2px 3px 3px rgba(0,0,0,0.5);
+		}
+		.text{
+			text-align: justify;
+			width: 350px;
+			height: 112px;
+			margin-top: 10px;
+
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 24px;
+			line-height: 28px;
+			display: flex;
+			letter-spacing: 0.09em;
+
+			color: #FFFFFF;
+
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.62);
+		}
+	</style>
+	<div class="navbar animate__animated animate__fadeInDown">
+		<div class="navbar-left">
+			<a href="index.html"><img src="logo2.png" alt="logosaya" style="width: 130px; height: 40px;"></a>
+		</div>
+	</div>
+	<div class="backbtn animate__animated animate__fadeInLeft animate__delay-1s">
+		<a href="semua.html">
+			BACK
+		</a>
+	</div>
+	<div class="container">
+		<div class="box">
+			<div class="row">
+				<p>Nama Lapak</p>
+				<input type="namalapak" id="namalapak" name="nama" placeholder="Nama lapak anda">
+			</div>
+			<div class="row">
+				<p>Nama Anda</p>
+				<input type="nama" id="nama" name="namalapak" placeholder="Nama anda">
+			</div>
+			<div class="row">
+				<p>Kategori</p>
+				<div class="radiobtn">
+					<input id="option" type="radio" name="field" value="option">
+  					<label for="option"><span><span></span></span>CV</label>
+  					<input id="option" type="radio" name="field" value="option">
+  					<label for="option"><span><span></span></span>IKLAN</label>
+  					<input id="option" type="radio" name="field" value="option">
+  					<label for="option"><span><span></span></span>FASHION</label>
+  					<input id="option" type="radio" name="field" value="option">
+  					<label for="option"><span><span></span></span>WEB</label>
+  					<input id="option" type="radio" name="field" value="option">
+  					<label for="option"><span><span></span></span>LOGO</label>
+				</div>
+			</div>
+			<div class="row">
+				<p>Deskripsi</p>
+				<textarea id="deskripsi" placeholder="Deskripsi tentang jasa yang ditawarkan"></textarea>
+			</div>
+			<div class="row">
+				<p>Portofolio</p>
+				<input type="file" class="file-btn" id="file">
+			</div>
+			<div class="row">
+				<p>Harga Rp.</p>
+				<input type="Harga" id="harga" name="Harga" placeholder="Tuliskan nominal saja">
+			</div>
+			<div class="row">
+				<p>No Telp</p>
+				<input type="contact" id="contact" name="contact" placeholder="Nomor Whatsapp aktif">
+			</div>
+			<div class="row">
+				<p>E-mail Anda</p>
+				<input type="email" id="email" name="email" placeholder="Nama anda">
+			</div>
+			<div class="row">
+				<p>Paket</p>
+				<textarea id="paket" placeholder="Paket penjualan yang Anda tawarkan"></textarea>
+			</div>
+			<div>
+				<input type="submit" id="submit" name="submit">
+			</div>
+		</div>
+		<div class="row animate__animated animate__fadeInDown animate__delay-2s">
+			<div class="line"></div>
+			<p class="text">Masukan data yang sesuai karena data seperti harga dan juga portofolio, karena ini penting bagi kelancaran anda dalam mendapatkan customer</p>
+		</div>
+	</div>
+	<br>
+</body>
+</html>
